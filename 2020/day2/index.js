@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 const database = fs
-  .readFileSync("./input.txt", "utf8")
+  .readFileSync(`${__dirname}/input.txt`, "utf8")
   .trim()
   .split("\n")
   .map((entry) => {
@@ -16,8 +16,6 @@ const database = fs
       password,
     };
   });
-
-console.log(database);
 
 let validPart1 = 0;
 let validPart2 = 0;
