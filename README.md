@@ -1,6 +1,6 @@
 # advent-of-code-2020
 
-Solvers for Advent of Code 2020 (adventofcode.com)
+Node.js solvers for Advent of Code 2020 (adventofcode.com)
 
 ## Install
 
