@@ -1,10 +1,10 @@
 const fs = require("fs");
 
 const map = fs
-  .readFileSync(`${__dirname}/input.txt`, "utf8")
+  .readFileSync(`${__dirname}/daniel.txt`, "utf8")
   .trim()
   .split("\n")
-  .map((row) => row.split(""));
+  .map((row) => row.trim().split(""));
 
 function xAxis(i, n = map[0].length) {
   return ((i % n) + n) % n;
