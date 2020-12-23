@@ -39,12 +39,12 @@ const moreAdapters = [
 
 describe("Solution for day 10", () => {
   it("can solve part 1", () => {
-    assert.strictEqual(part1([...adapters]), 35);
-    assert.strictEqual(part1([...adapters]), 35);
+    assert.strictEqual(part1(adapters), 35);
+    assert.strictEqual(part1(adapters), 35);
   });
 
   it("can solve part 2", () => {
-    assert.strictEqual(part2([...adapters]), 8);
-    assert.strictEqual(part2([...moreAdapters]), 19208);
+    assert.strictEqual(part2(adapters), 8);
+    assert.strictEqual(part2(moreAdapters), 19208);
   });
 });

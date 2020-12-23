@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-function part1(adapters) {
+function part1([...adapters]) {
   const count = [0, 0, 0];
 
   adapters = adapters.sort((a, b) => a - b);
@@ -18,7 +18,7 @@ function part1(adapters) {
   return result;
 }
 
-function part2(adapters) {
+function part2([...adapters]) {
   adapters = adapters.sort((a, b) => a - b);
   adapters.unshift(0);
   adapters.push(adapters[adapters.length - 1] + 3);
@@ -53,12 +53,12 @@ if (require.main === module) {
   /**
    * Part 1
    */
-  console.log(part1([...adapters]));
+  console.log(part1(adapters));
 
   /**
    * Part 2
    */
-  console.log(part2([...adapters]));
+  console.log(part2(adapters));
 }
 
 exports.part1 = part1;
