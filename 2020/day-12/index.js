@@ -79,6 +79,57 @@ function part1(instructions) {
 
   return Math.abs(ship.x) + Math.abs(ship.y);
 }
+function part2(instructions) {
+  const ship = {
+    x: 0,
+    y: 0,
+    wx: 10,
+    wy: 1,
+
+    N(n) {
+      this.wy += n;
+    },
+
+    E(n) {
+      this.wx += n;
+    },
+
+    S(n) {
+      this.wy -= n;
+    },
+
+    W(n) {
+      this.wx -= n;
+    },
+
+    F(n) {
+      for (let _ = 0; _ < n; _++) {
+        this.x += this.wx;
+        this.y += this.wy;
+      }
+    },
+
+    R(deg) {
+      let rounds = deg / 90;
+      for (let _ = 0; _ < rounds; _++) {
+        [this.wx, this.wy] = [this.wy, -this.wx];
+      }
+    },
+
+    L(deg) {
+      let rounds = deg / 90;
+      for (let _ = 0; _ < rounds; _++) {
+        [this.wx, this.wy] = [-this.wy, this.wx];
+      }
+    },
+  };
+
+  for (let [command, value] of instructions) {
+    ship[command](value);
+  }
+
+  return Math.abs(ship.x) + Math.abs(ship.y);
+}
 
 if (require.main === module) {
   const instructions = fs
@@ -88,6 +139,8 @@ if (require.main === module) {
     .map((e) => [e.slice(0, 1), Number(e.slice(1))]);
 
   console.log(part1(instructions));
+  console.log(part2(instructions));
 }
 
 exports.part1 = part1;
+exports.part2 = part2;

@@ -1,6 +1,6 @@
 const { test } = require("mocha");
 const assert = require("assert");
-const { part1 } = require("./index");
+const { part1, part2 } = require("./index");
 
 const instructions = `F10
 N3
@@ -13,5 +13,9 @@ F11`
 describe("day 11", () => {
   test("part 1", () => {
     assert.strictEqual(part1(instructions), 25);
+  });
+
+  test("part 2", () => {
+    assert.strictEqual(part2(instructions), 286);
   });
 });
